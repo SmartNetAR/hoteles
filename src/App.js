@@ -2,8 +2,6 @@ import React, { useState } from 'react' ;
 import Hero from './components/Hero' ;
 
 import { data } from  './data' ;
-import DateFilter from './components/DateFilter' ;
-import OptionsFilter from './components/OptionsFilter' ;
 import Filters from './components/Filters' ;
 
 const initialValuesFilter = {
@@ -14,25 +12,31 @@ const initialValuesFilter = {
     rooms: undefined
 } ;
 
-const optionFilterDefaultValue = [
-    { value: undefined, name: 'Cualquier tamaño' },
-    { value: 10, name: 'Hotel pequeño' },
-    { value: 20, name: 'Hotel mediano' },
-    { value: 30, name: 'Hotel grande' }
-] ;
-
 function App () {
     
-    
     const [ filter, setFilter ] = useState( initialValuesFilter ) ;
-    const [ optionFilterValue, setOptionFilterValue ] = useState( optionFilterDefaultValue ) ;
+
+    const handleChangeFilter = ( e ) => {
+
+        const name = e.target.name ;
+        const value = e.target.type === 'date' ? new Date( e.target.value ) : e.target.value ;
+
+        setFilter(
+            {
+                ...filter,
+                [name]: value
+            }
+        ) ;
+    } ;
+
     return (
         <>
             <Hero
-                { ...filter }
+                filter={ filter }
             />
             <Filters
                 filters={ filter }
+                handleChange={ handleChangeFilter }              
             />
         </>
     ) ;

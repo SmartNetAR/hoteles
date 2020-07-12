@@ -8,37 +8,51 @@ import * as icons from '@fortawesome/fontawesome-free-solid' ;
 import DateFilter from './DateFilter' ;
 import OptionsFilter from './OptionsFilter' ;
 
-function Filters ( props ) {
+function Filters ( { filters, handleChange } ) {
     return (
         <nav className="navbar is-info" style={ { justifyContent: 'center' } }>
             <div className="navbar-item">
                 <DateFilter
-                    date={ props.filters.dateFrom }
+                    date={ filters.dateFrom }
                     icon="fa-sign-in-alt"
+                    name="dateFrom"
+                    onChange={ handleChange }
                 />
             </div>
             <div className="navbar-item">
                 <DateFilter
-                    date={ props.filters.dateTo }
-                    icon="fa-sign-out-alt" />
+                    date={ filters.dateTo }
+                    icon="fa-sign-out-alt" 
+                    name="dateTo"
+                    onChange={ handleChange }
+                />                    
             </div>
             <div className="navbar-item">
                 <OptionsFilter
                     options={ [ { value: undefined, name: 'Todos los países' }, { value: 'Argentina', name: 'Argentina' }, { value: 'Brasil', name: 'Brasil' }, { value: 'Chile', name: 'Chile' }, { value: 'Uruguay', name: 'Uruguay' } ] }
-                    selected={ props.filters.country }
-                    icon="fa-globe" />
+                    selected={ filters.country }
+                    icon="fa-globe"
+                    name="country"
+                    onChange={ handleChange }
+                />
             </div>
             <div className="navbar-item">
                 <OptionsFilter
                     options={ [ { value: undefined, name: 'Cualquier precio' }, { value: 1, name: '$' }, { value: 2, name: '$$' }, { value: 3, name: '$$$' }, { value: 4, name: '$$$$' } ] }
-                    selected={ props.filters.price }
-                    icon="fa-dollar-sign" />
+                    selected={ filters.price }
+                    icon="fa-dollar-sign"
+                    name="price"
+                    onChange={ handleChange }
+                />
             </div>
             <div className="navbar-item">
                 <OptionsFilter
                     options={ [ { value: undefined, name: 'Cualquier tamaño' }, { value: 10, name: 'Hotel pequeño' }, { value: 20, name: 'Hotel mediano' }, { value: 30, name: 'Hotel grande' } ] }
-                    selected={ props.filters.rooms }
-                    icon="fa-bed" />
+                    selected={ filters.rooms }
+                    icon="fa-bed"
+                    name="rooms"
+                    onChange={ handleChange }
+                />
             </div>
         </nav>
     ) ;

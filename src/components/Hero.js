@@ -1,6 +1,6 @@
 import React from 'react' ;
 
-function Hero ( { dateFrom, dateTo, country, price, rooms } ) {
+function Hero ( { filter } ) {
     const optionsDate = {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     } ;
@@ -11,12 +11,12 @@ function Hero ( { dateFrom, dateTo, country, price, rooms } ) {
                     <h1 className="title">Hoteles</h1>
                     <h2 className="subtitle">
                         desde el <strong>
-                            { dateFrom.toLocaleDateString( 'es-AR', optionsDate ) }
-                        </strong> hasta el <strong>{ dateTo.toLocaleDateString( 'es-AR', optionsDate ) }
+                            { filter.dateFrom.toLocaleDateString( 'es-AR', optionsDate ) }
+                        </strong> hasta el <strong>{ filter.dateTo.toLocaleDateString( 'es-AR', optionsDate ) }
                         </strong>
-                        { country ? ` en ${country}` : '' }
-                        { price ? ' por $$' : '' }
-                        { rooms ? ` de hasta ${rooms} habitaciones` : '' }
+                        { filter.country ? ` en ${filter.country}` : '' }
+                        { filter.price ? ` por ${'$'.repeat( filter.price ) }` : '' }
+                        { filter.rooms ? ` de hasta ${filter.rooms} habitaciones` : '' }
                     </h2>
                 </div>
             </div>

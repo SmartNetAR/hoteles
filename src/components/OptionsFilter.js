@@ -1,13 +1,13 @@
 import React from 'react' ;
 
-function OptionsFilter ( { options, selected, icon } ) {
+function OptionsFilter ( { options, selected, icon, name, onChange } ) {
     return (
         <div className="field">
             <div className="control has-icons-left">
                 <div className="select" style={ { width: '100%' } }>
-                    <select value={ selected } style={ { width: '100%' } }>
+                    <select value={ selected } name={ name } onChange={ onChange } style={ { width: '100%' } }>
                         { options.map( option =>
-                            <option key={ option.value } value={ option.value }>{ option.name }</option> 
+                            <option key={ option.name } value={ option.value }>{ option.name }</option> 
                         ) }
                     </select>
                 </div>
