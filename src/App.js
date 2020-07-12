@@ -3,6 +3,7 @@ import Hero from './components/Hero' ;
 
 import { data } from  './data' ;
 import Filters from './components/Filters' ;
+import Hotel from './components/Hotel' ;
 
 const initialValuesFilter = {
     dateFrom: data.today,
@@ -37,6 +38,10 @@ function App () {
             <Filters
                 filters={ filter }
                 handleChange={ handleChangeFilter }              
+            />
+
+            <Hotel 
+                hotel={ data.hotelsData[0] } 
             />
         </>
     ) ;
