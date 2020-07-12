@@ -3,7 +3,7 @@ import Hero from './components/Hero' ;
 
 import { data } from  './data' ;
 import Filters from './components/Filters' ;
-import Hotel from './components/Hotel' ;
+import Hotels from './components/Hotels' ;
 
 const initialValuesFilter = {
     dateFrom: data.today,
@@ -16,6 +16,7 @@ const initialValuesFilter = {
 function App () {
     
     const [ filter, setFilter ] = useState( initialValuesFilter ) ;
+    const [ hotels, setHotels ] = useState( data.hotelsData ) ;
 
     const handleChangeFilter = ( e ) => {
 
@@ -40,8 +41,8 @@ function App () {
                 handleChange={ handleChangeFilter }              
             />
 
-            <Hotel 
-                hotel={ data.hotelsData[0] } 
+            <Hotels
+                hotels={ hotels }
             />
         </>
     ) ;

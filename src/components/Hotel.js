@@ -1,25 +1,25 @@
 import React from 'react' ;
 import Tag from './Tag' ;
 
-function Hotel ( { hotel } ) {
+function Hotel ( { data } ) {
     return (
         <div className="card">
             <div className="card-image">
                 <figure className="image is-4by3">
-                    <img src={ hotel.photo } alt="Sainte Jeanne Boutique & Spa" />
+                    <img src={ data.photo } alt="Sainte Jeanne Boutique & Spa" />
                 </figure>
             </div>
             <div className="card-content">
-                <p className="title is-4">{ hotel.name }</p>
-                <p>{ hotel.description }</p>
+                <p className="title is-4">{ data.name }</p>
+                <p>{ data.description }</p>
                 <div className="field is-grouped is-grouped-multiline" style={ { marginTop: '1em' } }>
                     <Tag
                         icons={ [ { name:'fa-map-marker' } ] }
-                        text={ `${hotel.city}, ${hotel.country}` }
+                        text={ `${data.city}, ${data.country}` }
                     />
                     <Tag
                         icons={ [ { name:'fa-bed' } ] }
-                        text={ `${ hotel.rooms } Habitaciones` }
+                        text={ `${ data.rooms } Habitaciones` }
                     />
                     <Tag
                         icons={ [
