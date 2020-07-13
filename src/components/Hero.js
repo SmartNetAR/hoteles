@@ -1,9 +1,7 @@
 import React from 'react' ;
+import moment from 'moment' ;
 
 function Hero ( { filter } ) {
-    const optionsDate = {
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-    } ;
     return (
         <section className="hero is-primary">
             <div className="hero-body">
@@ -11,8 +9,8 @@ function Hero ( { filter } ) {
                     <h1 className="title">Hoteles</h1>
                     <h2 className="subtitle">
                         desde el <strong>
-                            { filter.dateFrom.toLocaleDateString( 'es-AR', optionsDate ) }
-                        </strong> hasta el <strong>{ filter.dateTo.toLocaleDateString( 'es-AR', optionsDate ) }
+                            { moment( filter.dateFrom ).format( 'LL' ) }
+                        </strong> hasta el <strong>{ moment( filter.dateTo ).format( 'LL' )  }
                         </strong>
                         { filter.country ? ` en ${filter.country}` : '' }
                         { filter.price ? ` por ${'$'.repeat( filter.price ) }` : '' }
