@@ -1,12 +1,8 @@
 import React from 'react' ;
-import fontawesome from '@fortawesome/fontawesome' ;
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' ;
-import * as icons from '@fortawesome/fontawesome-free-solid' ;
-// import { faHome, faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid' ;
-// fontawesome.library.add( faCheckSquare, faCoffee ) ;
-
 import DateFilter from './DateFilter' ;
 import OptionsFilter from './OptionsFilter' ;
+import '@fortawesome/fontawesome' ;
+import '@fortawesome/fontawesome-free-solid' ;
 
 function Filters ( { filters, handleChange } ) {
     return (

@@ -1,10 +1,10 @@
 import React from 'react' ;
 
-function Tag ( { icons, text } ) {
+function Tag ( { icons, children } ) {
     const iconsStyles = { margin: '0 .125em' } ;
     return (
         <div className="control">
-            <div className={ `tags${  text ? ' has-addons' : ''}` }>
+            <div className={ `tags${  children ? ' has-addons' : ''}` }>
                 <span className="tag is-medium is-info">
                     { icons && icons.map( ( icon, index ) => (
                         <i
@@ -18,7 +18,7 @@ function Tag ( { icons, text } ) {
                         </i>
                     ) ) }
                 </span>
-                { text && ( <span className="tag is-medium">{ text }</span> ) }
+                { children && ( <span className="tag is-medium">{ children }</span> ) }
             </div>
         </div>
     ) ;

@@ -55,7 +55,8 @@ function App () {
                 case '30':
                     filteredHotels = filteredHotels.filter( hotel => hotel.rooms > 20 ) ;
                     break ;
-
+                default:
+                    break ;
             }
         }
 
