@@ -6,7 +6,7 @@ function Hero ( { filter } ) {
         <section className="hero is-primary">
             <div className="hero-body">
                 <div className="container">
-                    <h1 className="title">Hoteles - En desarrollo</h1>
+                    <h1 className="title">Hoteles</h1>
                     <h2 className="subtitle">
                         desde el <strong>
                             { moment( filter.dateFrom ).format( 'LL' ) }

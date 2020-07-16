@@ -5,7 +5,8 @@ module.exports = {
     },
     'extends': [
         'eslint:recommended',
-        'plugin:react/recommended'
+        'plugin:react/recommended',
+        'plugin:jest/recommended',
     ],
     'parserOptions': {
         'ecmaFeatures': {
@@ -15,7 +16,8 @@ module.exports = {
         'sourceType': 'module'
     },
     'plugins': [
-        'react'
+        'react',
+        'jest',
     ],
     rules: {
         indent: [ 1, 4, { SwitchCase: 1 } ],
@@ -53,5 +55,10 @@ module.exports = {
             'custom': 'ignore',
             'exceptions': [ '' ]
         } ],
+        'jest/no-disabled-tests': 'warn',
+        'jest/no-focused-tests': 'error',
+        'jest/no-identical-title': 'error',
+        'jest/prefer-to-have-length': 'warn',
+        'jest/valid-expect': 'error'
     },
 } ;
