@@ -13,8 +13,8 @@ function Hero ( { filter } ) {
                         </strong> hasta el <strong>{ moment( filter.dateTo ).format( 'LL' )  }
                         </strong>
                         { filter.country ? ` en ${filter.country}` : '' }
-                        { filter.price ? ` por ${'$'.repeat( filter.price ) }` : '' }
-                        { filter.rooms ? ` de hasta ${filter.rooms} habitaciones` : '' }
+                        { filter.price && !( filter.price === 'Cualquier precio' ) ? ` por ${'$'.repeat( filter.price ) }` : '' }
+                        { filter.rooms && !( filter.rooms === 'Cualquier tamaño' ) ? ` de hasta ${filter.rooms} habitaciones` : '' }
                     </h2>
                 </div>
             </div>
