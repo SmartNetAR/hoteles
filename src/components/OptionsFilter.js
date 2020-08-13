@@ -1,4 +1,5 @@
 import React from 'react' ;
+import PropTypes from 'prop-types' ;
 
 function OptionsFilter ( { options, selected, icon, name, onChange } ) {
     return (
@@ -18,5 +19,9 @@ function OptionsFilter ( { options, selected, icon, name, onChange } ) {
         </div>
     ) ;
 }
+
+OptionsFilter.propTypes = {
+    icon: PropTypes.string.isRequired,
+} ;
 
 export default OptionsFilter ;
