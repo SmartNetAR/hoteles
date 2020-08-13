@@ -1,4 +1,5 @@
 import React from 'react' ;
+import PropTypes from 'prop-types' ;
 
 function Tag ( { icons, children } ) {
     const iconsStyles = { margin: '0 .125em' } ;
@@ -24,4 +25,7 @@ function Tag ( { icons, children } ) {
     ) ;
 }
 
+Tag.propTypes = {
+    icons: PropTypes.array.isRequired,
+} ;
 export default Tag ;

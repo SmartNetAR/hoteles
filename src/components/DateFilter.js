@@ -1,4 +1,5 @@
 import React from 'react' ;
+import PropTypes from 'prop-types' ;
 import moment from 'moment' ;
 
 function DateFilter ( { date, icon, name, onChange } ) {
@@ -13,5 +14,15 @@ function DateFilter ( { date, icon, name, onChange } ) {
         </div>
     ) ;
 }
+
+DateFilter.propTypes = {
+    icon: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+} ;
+
+DateFilter.defaultProps = {
+    icon: 'fa-sign-in-alt',
+} ;
 
 export default DateFilter ;
