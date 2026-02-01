@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
+    "eslint": "^9.26.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-react-leo": "git+https://github.com/SmartNetAR/eslint-config-react-leo.git",
     "eslint-plugin-import": "^2.22.0",
